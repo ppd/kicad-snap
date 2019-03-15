@@ -57,29 +57,36 @@ apps:
     command: desktop-launch $SNAP/bin/kicad
     plugs: &plugs [opengl, x11, unity7, wayland, desktop, home, removable-media, network, gsettings]
     desktop: share/applications/kicad.desktop
+    environment: &env {EDITOR : /usr/bin/xdg-open}
   bitmap2component:
     command: desktop-launch $SNAP/bin/bitmap2component
     plugs: *plugs
     desktop: share/applications/bitmap2component.desktop
+    environment: *env
   eeschema:
     command: desktop-launch $SNAP/bin/eeschema
     plugs: *plugs
     desktop: share/applications/eeschema.desktop
+    environment: *env
   gerbview:
     command: desktop-launch $SNAP/bin/gerbview
     plugs: *plugs
     desktop: share/applications/gerbview.desktop
+    environment: *env
   pcb-calculator:
     command: desktop-launch $SNAP/bin/pcb_calculator
     plugs: *plugs
     desktop: share/applications/pcbcalculator.desktop
+    environment: *env
   pcbnew:
     command: desktop-launch $SNAP/bin/pcbnew
     plugs: *plugs
     desktop: share/applications/pcbnew.desktop
+    environment: *env
   pl-editor:
     command: desktop-launch $SNAP/bin/pl_editor
     plugs: *plugs
+    environment: *env
 
 parts:
   kicad-doc:
@@ -110,7 +117,7 @@ parts:
       - texlive-xetex 
       - texlive-lang-chinese
       - libunicode-linebreak-perl
-      
+
   kicad-symbols:
     plugin: cmake
     source: https://github.com/KiCad/kicad-symbols.git
