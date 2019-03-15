@@ -83,22 +83,16 @@ apps:
 
 parts:
   kicad-symbols:
-    plugin: dump
+    plugin: cmake
     source: https://github.com/KiCad/kicad-symbols.git
     source-tag: 5.1.0
-    organize:
-      '*.{lib,dcm}' : share/kicad/library/
-      'sym-lib-table' : share/kicad/template/sym-lib-table
     stage:
       - share/kicad/
 
   kicad-footprints:
-    plugin: dump
+    plugin: cmake
     source:  https://github.com/KiCad/kicad-footprints.git
     source-tag: 5.1.0
-    organize:
-      '*.pretty' : share/kicad/modules/
-      'fp-lib-table' : share/kicad/template/fp-lib-table
     stage:
       - share/kicad/
 
