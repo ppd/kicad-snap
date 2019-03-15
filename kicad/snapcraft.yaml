@@ -57,36 +57,29 @@ apps:
     command: desktop-launch $SNAP/bin/kicad
     plugs: &plugs [opengl, x11, unity7, wayland, desktop, home, removable-media, network, gsettings]
     desktop: share/applications/kicad.desktop
-    environment: &env {KICAD_SYMBOL_DIR: $SNAP/share/kicad/library, KISYSMOD: $SNAP/share/kicad/modules, KISYS3DMOD: $SNAP/share/kicad/modules/packages3d, KICAD_TEMPLATE_DIR: $SNAP/share/kicad/template}
   bitmap2component:
     command: desktop-launch $SNAP/bin/bitmap2component
     plugs: *plugs
     desktop: share/applications/bitmap2component.desktop
-    environment: *env
   eeschema:
     command: desktop-launch $SNAP/bin/eeschema
     plugs: *plugs
     desktop: share/applications/eeschema.desktop
-    environment: *env
   gerbview:
     command: desktop-launch $SNAP/bin/gerbview
     plugs: *plugs
     desktop: share/applications/gerbview.desktop
-    environment: *env
   pcb-calculator:
     command: desktop-launch $SNAP/bin/pcb_calculator
     plugs: *plugs
     desktop: share/applications/pcbcalculator.desktop
-    environment: *env
   pcbnew:
     command: desktop-launch $SNAP/bin/pcbnew
     plugs: *plugs
     desktop: share/applications/pcbnew.desktop
-    environment: *env
   pl-editor:
     command: desktop-launch $SNAP/bin/pl_editor
     plugs: *plugs
-    environment: *env
 
 parts:
   kicad-symbols:
@@ -194,7 +187,7 @@ parts:
       - -DKICAD_SCRIPTING_PYTHON3=ON
       - -DKICAD_SCRIPTING_WXPYTHON_PHOENIX=ON
       - -DPYTHON_EXECUTABLE=/usr/bin/python3
-      - -DKICAD_USER_CONFIG_DIR=$SNAP_USER_COMMON
+      - -DDEFAULT_INSTALL_PATH=/snap/kicad/current/
     
     stage-packages:
       - libgl1
