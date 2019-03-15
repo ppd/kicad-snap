@@ -82,6 +82,35 @@ apps:
     plugs: *plugs
 
 parts:
+  kicad-doc:
+    plugin: cmake
+    source: https://github.com/KiCad/kicad-doc.git
+    source-tag: 5.1.0
+    configflags: 
+      - -DBUILD_FORMATS=html
+    build-packages:
+      - asciidoc
+      - dblatex
+      - fonts-freefont-ttf
+      - fonts-vlgothic
+      - gettext 
+      - make 
+      - po4a 
+      - source-highlight
+      - texlive-lang-cyrillic 
+      - texlive-lang-english 
+      - texlive-lang-european
+      - texlive-lang-french 
+      - texlive-lang-german 
+      - texlive-lang-italian
+      - texlive-lang-japanese 
+      - texlive-lang-other 
+      - texlive-lang-polish
+      - texlive-lang-spanish 
+      - texlive-xetex 
+      - texlive-lang-chinese
+      - libunicode-linebreak-perl
+      
   kicad-symbols:
     plugin: cmake
     source: https://github.com/KiCad/kicad-symbols.git
