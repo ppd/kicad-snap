@@ -1,4 +1,4 @@
-name: kicad
+name: kicad5
 base: core18
 version: 5.1.0
 icon: kicad.svg
@@ -217,7 +217,7 @@ parts:
       - -DKICAD_SCRIPTING_PYTHON3=ON
       - -DKICAD_SCRIPTING_WXPYTHON_PHOENIX=ON
       - -DPYTHON_EXECUTABLE=/usr/bin/python3
-      - -DDEFAULT_INSTALL_PATH=/snap/kicad/current/
+      - -DDEFAULT_INSTALL_PATH=/snap/kicad5/current/
     
     stage-packages:
       - libgl1
