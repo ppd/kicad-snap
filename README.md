@@ -1,5 +1,5 @@
 # kicad-snap
-KiCAD snap package
+KiCad snap package
 
 ## Test packages (not searchable in store)
 ```
