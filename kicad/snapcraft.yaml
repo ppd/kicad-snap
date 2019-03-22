@@ -89,6 +89,11 @@ apps:
     environment: *env
 
 parts:
+  kicad-templates:
+    plugin: cmake
+    source: http://github.com/KiCad/kicad-templates.git
+    source-tag: 5.1.0
+    
   kicad-doc:
     plugin: cmake
     source: https://github.com/KiCad/kicad-doc.git
