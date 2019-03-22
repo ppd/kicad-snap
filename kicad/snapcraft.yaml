@@ -29,7 +29,7 @@ grade: stable
 
 layout:
   /lib/kicad/plugins/3d:
-    bind: $SNAP/lib/kicad/plugins/3d
+    bind: $SNAP/lib/kicad/plugins/3d    
 
 plugs:
   gnome-3-28-1804: # will be replaced by gnome extension
@@ -57,7 +57,7 @@ apps:
     command: desktop-launch $SNAP/bin/kicad
     plugs: &plugs [opengl, x11, unity7, wayland, desktop, home, removable-media, network, gsettings]
     desktop: share/applications/kicad.desktop
-    environment: &env {EDITOR : /usr/bin/xdg-open}
+    environment: &env {EDITOR : /usr/bin/xdg-open, PYTHONPATH: "$PYTHONPATH:$SNAP/usr/lib/python3/dist-packages", LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/lib"}
   bitmap2component:
     command: desktop-launch $SNAP/bin/bitmap2component
     plugs: *plugs
@@ -88,7 +88,7 @@ apps:
     plugs: *plugs
     environment: *env
 
-parts:
+parts:    
   kicad-templates:
     plugin: cmake
     source: http://github.com/KiCad/kicad-templates.git
@@ -219,7 +219,7 @@ parts:
       - -DKICAD_SCRIPTING_WXPYTHON_PHOENIX=ON
       - -DPYTHON_EXECUTABLE=/usr/bin/python3
       - -DDEFAULT_INSTALL_PATH=/snap/kicad5/current/
-    
+
     stage-packages:
       - libgl1
       - libglew2.0
@@ -262,7 +262,7 @@ parts:
       - libwxbase3.0-0v5
       - libwxgtk3.0-gtk3-0v5
       - libpython3.6
-
+      - python3-wxgtk4.0
     build-packages:
       - sed
       - ninja-build
