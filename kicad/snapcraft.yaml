@@ -127,15 +127,11 @@ parts:
     plugin: cmake
     source: https://github.com/KiCad/kicad-symbols.git
     source-tag: 5.1.0
-    stage:
-      - share/kicad/
 
   kicad-footprints:
     plugin: cmake
     source:  https://github.com/KiCad/kicad-footprints.git
     source-tag: 5.1.0
-    stage:
-      - share/kicad/
 
   desktop-gtk3: # will be replaced by gnome extension
     build-packages:
