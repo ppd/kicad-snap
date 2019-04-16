@@ -1,6 +1,6 @@
 name: kicad5-packages3d
 base: core18
-version: 5.1.0
+version: 5.1.1
 summary: Official KiCad 3D model libraries for rendering and MCAD integration
 description: |
   This package contains 3D models for KiCad 5. 
@@ -17,7 +17,7 @@ parts:
   kicad-packages3d:
     plugin: dump
     source: https://github.com/KiCad/kicad-packages3D.git
-    source-tag: 5.1.0
+    source-tag: 5.1.1
 
 slots:
   packages3d:
