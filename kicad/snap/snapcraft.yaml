@@ -1,6 +1,6 @@
 name: kicad5
 base: core18
-version: 5.1.1
+version: 5.1.2
 icon: kicad.svg
 summary: Electronic schematic and PCB design software
 description: |
@@ -92,12 +92,12 @@ parts:
   kicad-templates:
     plugin: cmake
     source: http://github.com/KiCad/kicad-templates.git
-    source-tag: 5.1.1
+    source-tag: 5.1.2
     
   kicad-doc:
     plugin: cmake
     source: https://github.com/KiCad/kicad-doc.git
-    source-tag: 5.1.1
+    source-tag: 5.1.2
     configflags: 
       - -DBUILD_FORMATS=html
     build-packages:
@@ -126,12 +126,12 @@ parts:
   kicad-symbols:
     plugin: cmake
     source: https://github.com/KiCad/kicad-symbols.git
-    source-tag: 5.1.1
+    source-tag: 5.1.2
 
   kicad-footprints:
     plugin: cmake
     source:  https://github.com/KiCad/kicad-footprints.git
-    source-tag: 5.1.1
+    source-tag: 5.1.2
 
   desktop-gtk3: # will be replaced by gnome extension
     build-packages:
@@ -183,7 +183,7 @@ parts:
     plugin: cmake
     source: https://github.com/KiCad/kicad-i18n.git
     source-type: git
-    source-tag: 5.1.1
+    source-tag: 5.1.2
     configflags:
       - -GNinja
     build-packages:
@@ -195,7 +195,7 @@ parts:
     plugin: cmake
     source: https://github.com/KiCad/kicad-source-mirror.git
     source-type: git
-    source-tag: 5.1.1
+    source-tag: 5.1.2
     build-environment:
       - LIBRARY_PATH: $SNAPCRAFT_STAGE/lib
     override-stage: |
